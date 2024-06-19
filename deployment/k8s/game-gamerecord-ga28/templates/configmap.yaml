@@ -9,7 +9,7 @@ data:
       "Logging": {
         "LogLevel": {
           "Default": "Warning",
-          "Grpc.Net.Client.Balancer": "Information",
+          "Grpc.Net.Client.Balancer": "Trace",
           "Tgs.GameRecord.GA28.Messages.ManualMessageHandler": "Information",
           "Tgs.GameRecord.GA28.Messages.ScheduleMessageHandler": "Information",
           "Tgs.GameRecord.GA28.Core.ApplicationServices.HandleRecordCommandService": "Information" 
