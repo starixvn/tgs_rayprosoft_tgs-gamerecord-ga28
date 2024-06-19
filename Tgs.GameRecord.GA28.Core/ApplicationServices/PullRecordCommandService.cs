@@ -24,7 +24,7 @@ internal class PullRecordCommandService(
 				startTime: command.StartTime,
 				endTime: command.EndTime,
 				page: page,
-				pageSize: 100,
+				pageSize: 32,
 				cancellationToken: cancellationToken)
 			   .ToArrayAsync(
 				cancellationToken: cancellationToken)
