@@ -1,0 +1,6 @@
+@Tgs.GameRecord.GA28_HostAddress = http://localhost:5132
+
+GET {{Tgs.GameRecord.GA28_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

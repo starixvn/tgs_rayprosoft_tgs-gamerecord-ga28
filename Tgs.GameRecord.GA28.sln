@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35004.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tgs.GameRecord.GA28", "Tgs.GameRecord.GA28\Tgs.GameRecord.GA28.csproj", "{F13928A9-5DCB-48E7-B7E9-7976EA4D8EAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tgs.GameRecord.GA28.Common", "Tgs.GameRecord.GA28.Common\Tgs.GameRecord.GA28.Common.csproj", "{B3006C6B-D859-4594-8A65-FEB24F0A2EE7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tgs.GameRecord.GA28.Core", "Tgs.GameRecord.GA28.Core\Tgs.GameRecord.GA28.Core.csproj", "{BD3173C3-29BC-48C2-AA52-9DABAF993E3A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tgs.GameRecord.GA28.Repositories", "Tgs.GameRecord.GA28.Repositories\Tgs.GameRecord.GA28.Repositories.csproj", "{29B17CE6-AB9F-4040-97F2-584AAF17B2D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tgs.GameRecord.GA28.Core.UnitTest", "Tgs.GameRecord.GA28.Core.UnitTest\Tgs.GameRecord.GA28.Core.UnitTest.csproj", "{E0E756F8-73FA-40F4-8367-0B0CA458FDA8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F13928A9-5DCB-48E7-B7E9-7976EA4D8EAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F13928A9-5DCB-48E7-B7E9-7976EA4D8EAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F13928A9-5DCB-48E7-B7E9-7976EA4D8EAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F13928A9-5DCB-48E7-B7E9-7976EA4D8EAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3006C6B-D859-4594-8A65-FEB24F0A2EE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3006C6B-D859-4594-8A65-FEB24F0A2EE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3006C6B-D859-4594-8A65-FEB24F0A2EE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3006C6B-D859-4594-8A65-FEB24F0A2EE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD3173C3-29BC-48C2-AA52-9DABAF993E3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD3173C3-29BC-48C2-AA52-9DABAF993E3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD3173C3-29BC-48C2-AA52-9DABAF993E3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD3173C3-29BC-48C2-AA52-9DABAF993E3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29B17CE6-AB9F-4040-97F2-584AAF17B2D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29B17CE6-AB9F-4040-97F2-584AAF17B2D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29B17CE6-AB9F-4040-97F2-584AAF17B2D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29B17CE6-AB9F-4040-97F2-584AAF17B2D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0E756F8-73FA-40F4-8367-0B0CA458FDA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0E756F8-73FA-40F4-8367-0B0CA458FDA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0E756F8-73FA-40F4-8367-0B0CA458FDA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0E756F8-73FA-40F4-8367-0B0CA458FDA8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B78FAF20-9B94-4632-812E-424DEAFEBDE7}
+	EndGlobalSection
+EndGlobal
