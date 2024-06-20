@@ -11,8 +11,8 @@ data:
           "Default": "Warning",
           "Grpc.Net.Client.Balancer": "Debug",
           "Tgs.GameRecord.GA28.Messages.ManualMessageHandler": "Information",
-          "Tgs.GameRecord.GA28.Messages.ScheduleMessageHandler": "Information",
-          "Tgs.GameRecord.GA28.Core.ApplicationServices.HandleRecordCommandService": "Information" 
+          "Tgs.GameRecord.GA28.Messages.ScheduleMessageHandler": "Warning",
+          "Tgs.GameRecord.GA28.Core.ApplicationServices.HandleRecordCommandService": "Warning" 
         }
       },
       "GameRecord": {
