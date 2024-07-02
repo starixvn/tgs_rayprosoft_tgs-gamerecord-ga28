@@ -108,7 +108,7 @@ internal class JobInitCommandService(
 					PrivateKey: privateKey,
 					PartnerAccountId: partnerAccountId);
 
-				gameProviderAgentMapper.Add(privateKey, jobExecuteCommand);
+				gameProviderAgentMapper.Add(partnerAccountId, jobExecuteCommand);
 
 				var recurringJobId = $"{gameProviderConfig.Name}|{privateKey}|{gameProviderConfig.GameProviderConfigId}";
 
