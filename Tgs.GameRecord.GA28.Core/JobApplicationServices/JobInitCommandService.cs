@@ -1,4 +1,4 @@
-﻿using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 
@@ -110,7 +110,7 @@ internal class JobInitCommandService(
 
 				gameProviderAgentMapper.Add(partnerAccountId, jobExecuteCommand);
 
-				var recurringJobId = $"{gameProviderConfig.Name}|{privateKey}|{gameProviderConfig.GameProviderConfigId}";
+				var recurringJobId = $"{gameProviderConfig.Name}|{partnerAccountId}|{gameProviderConfig.GameProviderConfigId}";
 
 				RecurringJob.AddOrUpdate<IHangfireUtensil>(
 					recurringJobId: recurringJobId,
