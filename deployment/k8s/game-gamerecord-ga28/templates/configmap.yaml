@@ -12,13 +12,23 @@ data:
           "Grpc.Net.Client.Balancer": "Warning",
           "Grpc.Net.Client.Balancer.DnsResolver": "Debug",
           "Tgs.GameRecord.GA28.Messages.ManualMessageHandler": "Information",
-          "Tgs.GameRecord.GA28.Messages.ScheduleMessageHandler": "Warning",
-          "Tgs.GameRecord.GA28.Core.ApplicationServices.HandleRecordCommandService": "Warning" 
+          "Tgs.GameRecord.GA28.Messages.ScheduleMessageHandler": "Information",
+          "Tgs.GameRecord.GA28.Core.ApplicationServices.HandleRecordCommandService": "Information"
         }
       },
       "GameRecord": {
         "GameCommandClientBaseUrl": "http://game-gamecommand/",
         "GameInterfaceClientBaseUrl": "dns:///game-gameinterface-ga28:9090/"
+      },
+      "GameRecordInfo": {
+        "GameProviderCode": "GA28",
+        "GameProviderConfiguration": "GA28Configuration",
+        "GameExternalId": "cockfighting",
+        "HangfirePrefix": "gamerecord-ga28-hangfire:",
+        "HangfireLocking": "gamerecord-ga28-locking:",
+        "IntervalMinutes": 60,
+        "IntervalMinutesMax": 1440,
+        "IntervalMinutesMinimum": 1
       }
     }
   otel-collector-config.yaml: |

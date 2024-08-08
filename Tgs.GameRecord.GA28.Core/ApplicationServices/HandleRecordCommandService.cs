@@ -4,8 +4,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Tgs.ServiceUtility;
 using Valhalla.MessageQueue;
-using Tgs.GameRecord.GA28.Core;
-using Tgs.GameRecord.GA28.Core.ApplicationServices;
 
 namespace Tgs.GameRecord.GA28.Core.ApplicationServices;
 
@@ -29,7 +27,7 @@ internal class HandleRecordCommandService(
 			GameInterface.Ga28.Protos.GameRecordResult.Void => Handle.Common.Protos.BetState.Void,
 			_ => Handle.Common.Protos.BetState.Running
 		};
-		
+
 		var bet = command.GameRecord.Bet.ToDecimal().GetValueOrDefault(0);
 		var validBet = command.GameRecord.Bet.ToDecimal().GetValueOrDefault(0);
 		var settle = 0.0m;

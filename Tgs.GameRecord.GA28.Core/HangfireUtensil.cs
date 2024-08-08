@@ -1,6 +1,6 @@
-﻿using Tgs.ServiceUtility;
-using Tgs.GameRecord.GA28.Core;
-using Tgs.GameRecord.GA28.Core.JobApplicationServices;
+﻿using Tgs.GameRecord.GA28.Core.JobApplicationServices;
+
+using Tgs.ServiceUtility;
 
 namespace Tgs.GameRecord.GA28.Core;
 
