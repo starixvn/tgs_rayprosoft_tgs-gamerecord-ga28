@@ -1,7 +1,8 @@
 ﻿using Tgs.GameCommand.Client;
 using Tgs.GameInterface.Ga28.Client;
-using Tgs.GameRecord.GA28.Core;
 using Tgs.GameRecord.GA28;
+
+using Tgs.GameRecord.GA28.Core;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

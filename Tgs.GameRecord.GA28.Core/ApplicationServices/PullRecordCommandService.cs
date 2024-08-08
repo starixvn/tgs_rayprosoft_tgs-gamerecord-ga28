@@ -1,8 +1,9 @@
 ﻿using System.Text.Json;
 using Microsoft.Extensions.Logging;
-using Tgs.ServiceUtility;
 using Tgs.GameInterface.Ga28.Client;
 using Tgs.GameInterface.Ga28.Protos;
+
+using Tgs.ServiceUtility;
 
 namespace Tgs.GameRecord.GA28.Core.ApplicationServices;
 

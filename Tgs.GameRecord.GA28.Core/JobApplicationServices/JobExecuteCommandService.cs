@@ -2,11 +2,10 @@
 using System.Text.Json;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Tgs.GameRecord.GA28.Common;
+
 using Tgs.ServiceUtility;
 using Valhalla.MessageQueue;
-using Tgs.GameRecord.GA28.Core;
-using Tgs.GameRecord.GA28.Core.JobApplicationServices;
-using Tgs.GameRecord.GA28.Common;
 
 namespace Tgs.GameRecord.GA28.Core.JobApplicationServices;
 
