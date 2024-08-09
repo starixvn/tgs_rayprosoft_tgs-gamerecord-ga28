@@ -63,7 +63,7 @@ builder.Services.AddHangfire(
 		var gameRecordInfoOptions = builder.Configuration.GetSection("GameRecordInfo").Get<GameRecordInfoOptions>()!;
 		var options = new RedisStorageOptions
 		{
-			Prefix = $"gamerecord-{gameRecordInfoOptions.GameProviderCode.ToLower()}-hangfire:"
+			Prefix = gameRecordInfoOptions.HangfirePrefix
 		};
 		_ = config
 		.UseRedisStorage(connectionString, options)
