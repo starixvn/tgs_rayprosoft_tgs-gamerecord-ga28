@@ -1,7 +1,6 @@
 ﻿using System.Collections.Concurrent;
 
 using Microsoft.Extensions.DependencyInjection;
-using Tgs.GameRecord.GA28.Core;
 using Tgs.GameRecord.GA28.Core.ApplicationServices;
 
 namespace Tgs.GameRecord.GA28.Core;

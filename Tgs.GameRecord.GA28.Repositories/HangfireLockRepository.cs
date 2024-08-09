@@ -5,9 +5,9 @@ using Tgs.GameRecord.GA28.Core;
 
 namespace Tgs.GameRecord.GA28.Repositories;
 
-internal class HangfireLock(
+internal class HangfireLockRepository(
 	IOptions<GameRecordInfoOptions> options,
-	IDatabase database) : IHangfireLock
+	IDatabase database) : IHangfireLockRepository
 {
 	private readonly GameRecordInfoOptions _options = options.Value;
 

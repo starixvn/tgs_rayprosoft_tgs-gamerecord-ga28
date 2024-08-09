@@ -12,6 +12,8 @@ using Tgs.GameRecord.GA28;
 using Tgs.GameRecord.GA28.Messages;
 using Tgs.GameRecord.GA28.Common;
 using Tgs.GameRecord.GA28.Core;
+using Tgs.GameCommand.Client;
+using Tgs.GameInterface.Ga28.Client;
 
 var filterInstrumentations = new[] { "html", "ico", "png", "jpg" };
 
@@ -61,7 +63,7 @@ builder.Services.AddHangfire(
 		var gameRecordInfoOptions = builder.Configuration.GetSection("GameRecordInfo").Get<GameRecordInfoOptions>()!;
 		var options = new RedisStorageOptions
 		{
-			Prefix = gameRecordInfoOptions.HangfirePrefix
+			Prefix = $"gamerecord-{gameRecordInfoOptions.GameProviderCode.ToLower()}-hangfire:"
 		};
 		_ = config
 		.UseRedisStorage(connectionString, options)
@@ -69,27 +71,36 @@ builder.Services.AddHangfire(
 	})
 	.AddHangfireServer();
 
-builder.Services.AddGameRecord(
-	(options, sp) =>
+builder.Services
+	.AddOptions<RedisOptions>()
+	.Configure((RedisOptions options, IServiceProvider sp) =>
 	{
 		var configuration = sp.GetRequiredService<IConfiguration>();
 		options.ConnectionString = configuration.GetConnectionString("Redis")!;
-	},
-	(options, sp) =>
+	})
+	.Services
+	.AddOptions<GameRecordInfoOptions>()
+	.Configure((GameRecordInfoOptions options, IServiceProvider sp) =>
 	{
 		var configuration = sp.GetRequiredService<IConfiguration>();
 		configuration.GetSection("GameRecordInfo").Bind(options);
-	},
-	(options, sp) =>
+	})
+	.Services
+	.AddSingleton(TimeProvider.System)
+	.AddSingleton<RedisConnectionManager>()
+	.AddGameCommandClient((options, sp) =>
 	{
 		var configuration = sp.GetRequiredService<IConfiguration>();
 		options.BaseUrl = configuration.GetValue<Uri>("GameRecord:GameCommandClientBaseUrl")!;
-	},
-	(options, sp) =>
+	})
+	.AddGameInterfaceGa28Client((options, sp) =>
 	{
 		var configuration = sp.GetRequiredService<IConfiguration>();
 		options.BaseUrl = configuration.GetValue<Uri>("GameRecord:GameInterfaceClientBaseUrl")!;
-	});
+	})
+	.AddGameRecordCore()
+	.AddGameRecordRepository(
+	redisDatabaseResolver: (sp) => sp.GetRequiredService<RedisConnectionManager>().Database);
 
 builder.Services
 	.AddKeyedSingleton("Nats", (sp, _) => new NatsConnection(NatsOpts.Default with
