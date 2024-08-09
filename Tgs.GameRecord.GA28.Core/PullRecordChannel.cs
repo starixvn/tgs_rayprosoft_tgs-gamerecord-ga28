@@ -3,9 +3,9 @@ using System.Text.Json;
 using System.Threading.Channels;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Tgs.ServiceUtility;
-using Tgs.GameRecord.GA28.Core;
 using Tgs.GameRecord.GA28.Core.ApplicationServices;
+
+using Tgs.ServiceUtility;
 
 namespace Tgs.GameRecord.GA28.Core;
 

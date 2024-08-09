@@ -16,18 +16,6 @@ public class GA28Controller : ControllerBase
 	/// <param name="messageSender">The message sender.</param>
 	/// <param name="source">The source.</param>
 	/// <returns></returns>
-	/// <remarks>
-	/// <b>Example</b><br />
-	///
-	///     Post
-	///         {
-	///				"apiUrl": "http://partner-api.dev.ga28.cc",
-	///				"privateKey": "8456c9de-d589-4e8a-876f-c9c8e48dda3e",
-	///				"partnerAccountId": "99a6f8ef-38a6-4f31-b69a-e222c2a54771",
-	///				"startTime": "2024-06-18T10:00:00+08:00",
-	///				"endTime": "2024-06-18T11:00:00+08:00"
-	///         }
-	/// </remarks>
 	[HttpPost("manual")]
 	public ValueTask GameRecordManualAsync(
 		[FromServices] IMessageSender messageSender,
@@ -43,18 +31,6 @@ public class GA28Controller : ControllerBase
 	/// <param name="messageSender">The message sender.</param>
 	/// <param name="source">The source.</param>
 	/// <returns></returns>
-	/// <remarks>
-	/// <b>Example</b><br />
-	///
-	///     Post
-	///         {
-	///				"apiUrl": "http://partner-api.dev.ga28.cc",
-	///				"privateKey": "8456c9de-d589-4e8a-876f-c9c8e48dda3e",
-	///				"partnerAccountId": "99a6f8ef-38a6-4f31-b69a-e222c2a54771",
-	///				"startTime": "2024-06-18T10:00:00+08:00",
-	///				"endTime": "2024-06-18T11:00:00+08:00"
-	///         }
-	/// </remarks>
 	[HttpPost("schedule")]
 	public ValueTask GameRecordScheduleAsync(
 		[FromServices] IMessageSender messageSender,
