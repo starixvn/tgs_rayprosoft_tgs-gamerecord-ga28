@@ -7,13 +7,12 @@ using NATS.Client.Core;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
-using Tgs.MessageQueue.Nats.Serializers;
 using Tgs.GameRecord.GA28;
-using Tgs.GameRecord.GA28.Messages;
 using Tgs.GameRecord.GA28.Common;
 using Tgs.GameRecord.GA28.Core;
-using Tgs.GameCommand.Client;
-using Tgs.GameInterface.Ga28.Client;
+
+using Tgs.GameRecord.GA28.Messages;
+using Tgs.MessageQueue.Nats.Serializers;
 
 var filterInstrumentations = new[] { "html", "ico", "png", "jpg" };
 
@@ -98,9 +97,13 @@ builder.Services
 		var configuration = sp.GetRequiredService<IConfiguration>();
 		options.BaseUrl = configuration.GetValue<Uri>("GameRecord:GameInterfaceClientBaseUrl")!;
 	})
+	.AddGameRecordHandleClient(httpClientBuilder => httpClientBuilder.ConfigureHttpClient((sp, http) =>
+	{
+		var config = sp.GetRequiredService<IConfiguration>();
+		http.BaseAddress = config.GetValue<Uri>("GameRecord:GameRecordHandleClientBaseUrl");
+	}))
 	.AddGameRecordCore()
-	.AddGameRecordRepository(
-	redisDatabaseResolver: (sp) => sp.GetRequiredService<RedisConnectionManager>().Database);
+	.AddGameRecordRepository(redisDatabaseResolver: (sp) => sp.GetRequiredService<RedisConnectionManager>().Database);
 
 builder.Services
 	.AddKeyedSingleton("Nats", (sp, _) => new NatsConnection(NatsOpts.Default with
