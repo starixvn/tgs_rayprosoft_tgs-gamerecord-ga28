@@ -18,17 +18,8 @@ data:
       },
       "GameRecord": {
         "GameCommandClientBaseUrl": "http://game-gamecommand/",
-        "GameInterfaceClientBaseUrl": "dns:///game-gameinterface-ga28:9090/"
-      },
-      "GameRecordInfo": {
-        "GameProviderCode": "GA28",
-        "GameProviderConfiguration": "GA28Configuration",
-        "GameExternalId": "cockfighting",
-        "HangfirePrefix": "gamerecord-ga28-hangfire:",
-        "HangfireLocking": "gamerecord-ga28-locking:",
-        "IntervalMinutes": 60,
-        "IntervalMinutesMax": 1440,
-        "IntervalMinutesMinimum": 1
+        "GameInterfaceClientBaseUrl": "dns:///game-gameinterface-ga28:9090/",
+        "GameRecordHandleClientBaseUrl": "http://game-gamerecord-handle/"
       }
     }
   otel-collector-config.yaml: |

@@ -4,7 +4,6 @@ using Tgs.GameRecord.GA28.Common;
 using Tgs.GameRecord.GA28.Core;
 using Tgs.GameRecord.GA28.Core.ApplicationServices;
 using Valhalla.MessageQueue;
-using Tgs.GameRecord.GA28.Messages;
 
 namespace Tgs.GameRecord.GA28.Messages;
 
@@ -36,11 +35,11 @@ public class ManualMessageHandler(
 
 		return dispatcher.PushCommandAsync(
 			command: new PullRecordCommand(
-			ApiUrl: message.ApiUrl,
-			PrivateKey: message.PrivateKey,
-			PartnerAccountId: message.PartnerAccountId,
-			StartTime: message.StartTime,
-			EndTime: message.EndTime),
+				ApiUrl: message.ApiUrl,
+				PrivateKey: message.PrivateKey,
+				PartnerAccountId: message.PartnerAccountId,
+				StartTime: message.StartTime,
+				EndTime: message.EndTime),
 			cancellationToken: cancellationToken);
 	}
 }
