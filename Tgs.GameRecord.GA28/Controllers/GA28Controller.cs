@@ -22,7 +22,7 @@ public class GA28Controller : ControllerBase
 		GA28GameRecordMessage source)
 		=> messageSender.PublishAsync(
 			subject: GA28NatsConst.ManualPublish,
-			data: Encoding.UTF8.GetBytes(JsonSerializer.Serialize(source)),
+			data: JsonSerializer.SerializeToUtf8Bytes(source),
 			cancellationToken: HttpContext.RequestAborted);
 
 	/// <summary>
@@ -37,6 +37,6 @@ public class GA28Controller : ControllerBase
 		GA28GameRecordMessage source)
 		=> messageSender.PublishAsync(
 			subject: GA28NatsConst.SchedulePublish,
-			data: Encoding.UTF8.GetBytes(JsonSerializer.Serialize(source)),
+			data: JsonSerializer.SerializeToUtf8Bytes(source),
 			cancellationToken: HttpContext.RequestAborted);
 }
